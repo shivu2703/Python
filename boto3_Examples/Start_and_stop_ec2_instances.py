@@ -15,4 +15,4 @@ def manage_instance(instance_id, action):
     else:
         print("Invalid actions, Use 'start' or 'stop' or 'terminate'.")
 
-manage_instance('i-02430e493171ae54a', "terminate")
+manage_instance('i-007582bc60b683be4', "terminate")
