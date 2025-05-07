@@ -1,0 +1,7 @@
+2025-05-07 10:00:00 INFO Starting the application
+2025-05-07 10:00:01 INFO Connecting to the database
+2025-05-07 10:00:02 WARNING Database connection is slow
+2025-05-07 10:00:03 ERROR Failed to connect to database
+2025-05-07 10:00:04 INFO Retrying connection
+2025-05-07 10:00:05 ERROR Connection timeout after 5 seconds
+2025-05-07 10:00:06 INFO Application shutdown
