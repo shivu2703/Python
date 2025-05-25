@@ -14,7 +14,20 @@ def run_cmd(cmd):
    return result.stdout.strip()
 
 def get_instance_id():
-   return run_cmd("curl -s http://169.254.169.254/latest/meta-data/instance-id")
+    # Step 1: Get the token
+    token_cmd = (
+        "curl -X PUT 'http://169.254.169.254/latest/api/token' "
+        "-H 'X-aws-ec2-metadata-token-ttl-seconds: 21600'"
+    )
+    token = run_cmd(token_cmd)
+
+    # Step 2: Use the token to get the instance ID
+    metadata_cmd = (
+        "curl -H 'X-aws-ec2-metadata-token: {}' "
+        "http://169.254.169.254/latest/meta-data/instance-id".format(token)
+    )
+    return run_cmd(metadata_cmd)
+
 
 
 
